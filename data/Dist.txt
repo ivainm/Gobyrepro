@@ -1,0 +1,8 @@
+Area	Distance_KBG
+Kristineberg	0
+Arendal	293
+Austevoll	717
+Hitra	1203
+Helligvaer	1723
+Ringstad	2132
+Norther_limit	2476
