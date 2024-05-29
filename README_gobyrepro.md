@@ -23,10 +23,12 @@ Slurm code were run on the IDUN cluster computer of NTNU. Bash and R scripts on 
 
 Data files             #description
 -------------------------------------
-###repository address to raw data
-pop.conv.tsv           #file assigning individuals to their population, in the format required for the radiator package (Fst calculation in R)
+###repository address to raw data NCBI for raw reads, github/dryad for the rest
+pop_conv2.txt          #population map (individuals->population), in the format required for the radiator package (Fst calculation in R)
 R90_maf.bed/bim/fam    #3 files constituting the bed file obtained from the filtered vcf file, in order to calcualte Fst with the radiator package in R
-
+het90_maf.het          #Excess homozygosity plots for identifying contaminated samples
+missingmaf5_90.imiss   #locus missingness per individual from plink, to plot in R and identify outliers
+popmap_SORT_nomerge.txt#population map for analysis with technical replicates not merged
 
 Code files             #description									
 -------------------------------------
@@ -34,6 +36,7 @@ processrad.sh          #demultiplexing the raw reads and filtering for adapter c
 align2.slurm           #align demultiplexed ddRAD reads to the reference genome of P.minutus. Index aligned reads. Run som quality checks with samtools.
 gstacks.slurm          #firt step of the Stacks pipeline - SNP catalogue creation from aligned reads.
 populations.slurm      #second step of the Stacks pipeline - VCF file output.
+nomerge.sh             #analyse data with technical replicates not merged in order to identify suspicious/contaminated samples
 final_vcf.sh           #from the vcf file, filter using vcftools and plink, run pca, export a bedfile for use in R, calculate individual level heterozygosity.
 R_popgen.R             #Different step of the analysis done in R. Plots to identify outliers, Fst calculations with radiator package.
 
@@ -48,6 +51,7 @@ Part 2
 
 Data files             #description
 -------------------------------------
+###repository address to raw data NCBI for raw reads, github/dryad for the rest
 ALLmod.csv             #Sea surface temperature data from Nordkyst800 model for the studied populations
 nestdata.csv           #Field data collected in artificial nests (egg features, phenotypes of guarding males)
 OSRdata.csv            #Field data of population census from observed individuals
