@@ -66,6 +66,7 @@ env_info.txt           #Modelled developmental time available for each populatio
 out_all.txt            #List of outlier individuals to be removed when analysing genomic data
 pop_map_final.txt      #Information about individuals sequenced
 primaryprod.txt        #Estimated beginning and end dates of primary productivity in the studied populations 
+plink90HW_R_maf.ped    #SNP data from the ddRAD data, used to do PCA, admixture and Fst calculations
 
 
 Code files             #description
